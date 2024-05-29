@@ -1,0 +1,121 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: #f4b400;
+}
+
+main {
+  text-align: center;
+}
+
+#google_image {
+  font-size: 48px;
+  color: white;
+  margin-bottom: 20px;
+}
+
+.search-input-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+
+.google-search-btn {
+  background-color: #4285f4;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.google-search-btn:hover {
+  background-color: #357ae8;
+}
+
+.feeling-lucky-btn {
+  background-color: transparent;
+  color: #4285f4;
+  border: 2px solid #4285f4;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.feeling-lucky-btn:hover {
+  background-color: #4285f4;
+  color: white;
+}
+
+.mic-icon {
+  width: 24px;
+  height: 24px;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+.customize_size {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 14px;
+  margin-top: 20px;
+}
+
+.customize_size i {
+  margin-right: 5px;
+}
+
+@media (max-width: 600px) {
+  #content {
+    width: 100%;
+  }
+}
+
+.search-input-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.search-input-section form {
+  display: flex;
+  align-items: center;
+  background: white;
+  border-radius: 24px;
+  padding: 5px 10px;
+  box-shadow: 0 1px 6px rgba(32, 33, 36, 0.28);
+}
+
+.gsb {
+  width: 24px;
+  height: 24px;
+  margin-right: 10px;
+}
+
+#content {
+  border: none;
+  outline: none;
+  padding: 10px;
+  font-size: 16px;
+  width: 300px;
+}
+
+@media (max-width: 600px) {
+  #content {
+    width: 200px;
+  }
+}
+

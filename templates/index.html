@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block head %}
+
+<title>Search Page</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style1.css') }}">
+{% endblock %}
+
+{% block body %}
+<main>
+        <h1 id="google_image">Search</h1>
+
+        <!-- Search Input Section -->
+        <section class="search-input-section">
+            <form action="/result" method="POST">
+                <img src="https://media.geeksforgeeks.org/wp-content/uploads/20240122040847/search.png" alt="google-search-btn" class="gsb">
+                <input type="text" name="content" id="content" placeholder="Search Item or type your interest" class="search-input">
+            </form>
+        </section>
+        <div class="customize_size">
+            <i class="fa fa-solid fa-pen"></i>
+             Developed By :-  Sourav Shukla 
+        </div>
+</main>
+{% endblock %}

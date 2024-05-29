@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Result</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}"/>
+</head>
+
+<body >     
+    <!-- Heading -->
+    <div class="header">
+        <h1>Search Results</h1>
+    </div>
+    <div class="container mt-5">
+        {% for review in reviews %}
+        <div class="row">
+            <div class="col-md-6">
+                <img src="{{review['product_img']}}" alt="Product Image" class="product-image">
+            </div>
+            <div class="col-md-6 product-info">
+                <h2>{{review['product_name']}}</h2>
+                <div>
+                    <span class="badge badge-success">{{review['over_all_rating']}}</span>
+                </div>
+                <div class="mt-2">
+                    <span class="text-success">Special price</span>
+                    <h3>{{review['product_price']}}<small class="text-muted"><del>{{review['dis_product_price']}}</del></small> <span class="text-success">{{review['dis_offer_price']}}</span></h3>
+                </div>
+                <ul class="offer-list mt-3">
+                    {% for offer in review['product_offers'] %}
+                    <li><strong>Offer:</strong> {{ offer }}</li>
+                    {% endfor %}
+                    <li><a href="#">View 17 more offers</a></li>
+
+                </ul>
+                <div class="mt-4">
+                    <form action="/review" method="POST" target="_blank">
+                        <input type="hidden" name="product_link" value="{{ review['product_link'] }}">
+                        <input type="hidden" name="product_name" value="{{ review['product_name'] }}">
+                        <button type="submit" class="btn btn-primary btn-lg">People Reviews</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <br>
+        <br>
+        <hr>
+        {% endfor %}
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
